@@ -117,11 +117,16 @@ class CategoryTile extends StatelessWidget {
         Navigator.of(context).push(
           PageRouteBuilder(
             transitionDuration: Duration(milliseconds: 500),
-            transitionsBuilder: (ctx,animation,secAnimation,child){
-              animation = CurvedAnimation(parent: animation,curve: Curves.elasticInOut);
-              return ScaleTransition(scale: animation,alignment: Alignment.topCenter,child: child,);
+            transitionsBuilder: (ctx, animation, secAnimation, child) {
+              animation = CurvedAnimation(
+                  parent: animation, curve: Curves.elasticInOut);
+              return ScaleTransition(
+                scale: animation,
+                alignment: Alignment.topCenter,
+                child: child,
+              );
             },
-            pageBuilder: (ctx,animation,secAnimation){
+            pageBuilder: (ctx, animation, secAnimation) {
               return CategoryNews(cat: categoryName);
             },
           ),
@@ -182,15 +187,22 @@ class MainTile extends StatelessWidget {
       onTap: () {
         //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ArticleView(url:url,title: title,)));
         Navigator.of(context).push(PageRouteBuilder(
-          transitionDuration: Duration(milliseconds: 400),
-          transitionsBuilder: (ctx,animation,secAnimation,child){
-            animation = CurvedAnimation(parent: animation,curve: Curves.easeInOutCirc);
-            return ScaleTransition(scale: animation,child: child,alignment: Alignment.bottomCenter,);
-        },
-          pageBuilder: (ctx,animation,secAnimation){
-            return ArticleView(url: url,title: title,);
-          }
-        ));
+            transitionDuration: Duration(milliseconds: 400),
+            transitionsBuilder: (ctx, animation, secAnimation, child) {
+              animation = CurvedAnimation(
+                  parent: animation, curve: Curves.easeInOutCirc);
+              return ScaleTransition(
+                scale: animation,
+                child: child,
+                alignment: Alignment.bottomCenter,
+              );
+            },
+            pageBuilder: (ctx, animation, secAnimation) {
+              return ArticleView(
+                url: url,
+                title: title,
+              );
+            }));
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 16),
@@ -223,7 +235,9 @@ class MainTile extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            Divider(color: Colors.grey,)
+            Divider(
+              color: Colors.grey,
+            )
           ],
         ),
       ),

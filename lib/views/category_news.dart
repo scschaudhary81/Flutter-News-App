@@ -62,7 +62,7 @@ class _CategoryNewsState extends State<CategoryNews> {
             )
           : SafeArea(
               child: Container(
-                padding: EdgeInsets.only(top: 16.0,left: 16.0,right: 16.0),
+                padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
                 child: Column(
                   children: [
                     Expanded(

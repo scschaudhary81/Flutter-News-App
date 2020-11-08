@@ -10,7 +10,7 @@ class News {
     String url =
         'http://newsapi.org/v2/top-headlines?country=in&apiKey=a835f3432dfb417aa922fda4e9078005';
     var response = await http.get(url);
-    var jsonData = await jsonDecode(response.body) ;
+    var jsonData = await jsonDecode(response.body);
     if (jsonData['status'] == "ok") {
       jsonData["articles"].forEach((element) {
         if (element['urlToImage'] != null && element['description'] != null) {
@@ -28,10 +28,9 @@ class News {
   }
 }
 
-
-class CategoryNewsClass{
-final String cat;
-CategoryNewsClass({@required this.cat});
+class CategoryNewsClass {
+  final String cat;
+  CategoryNewsClass({@required this.cat});
 
   List<ArticleModel> news = [];
 
@@ -39,7 +38,7 @@ CategoryNewsClass({@required this.cat});
     String url =
         'http://newsapi.org/v2/top-headlines?country=in&category=$cat&apiKey=a835f3432dfb417aa922fda4e9078005';
     var response = await http.get(url);
-    var jsonData = await jsonDecode(response.body) ;
+    var jsonData = await jsonDecode(response.body);
     if (jsonData['status'] == "ok") {
       jsonData["articles"].forEach((element) {
         if (element['urlToImage'] != null && element['description'] != null) {

@@ -8,7 +8,7 @@ class ArticleView extends StatefulWidget {
   final String url;
   final String title;
 
-  ArticleView({@required this.url,this.title});
+  ArticleView({@required this.url, this.title});
 
   @override
   _ArticleViewState createState() => _ArticleViewState();
@@ -30,12 +30,15 @@ class _ArticleViewState extends State<ArticleView> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(icon: Icon(Icons.share_rounded), onPressed: (){
-            Share.share('${widget.title} : ${widget.url}',
-              subject: 'Do Check Out',
-              //sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size
-            );
-          }),
+          IconButton(
+              icon: Icon(Icons.share_rounded),
+              onPressed: () {
+                Share.share(
+                  '${widget.title} : ${widget.url}',
+                  subject: 'Do Check Out',
+                  //sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size
+                );
+              }),
         ],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,

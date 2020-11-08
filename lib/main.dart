@@ -51,8 +51,7 @@ class _MyAppState extends State<MyApp> {
                   textStyle: TextStyle(
                       color: Colors.black87,
                       fontSize: 30.0,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontWeight: FontWeight.w500),
                   textAlign: TextAlign.start,
                   alignment: AlignmentDirectional.topStart,
                 ),
